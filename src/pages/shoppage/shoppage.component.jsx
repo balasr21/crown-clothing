@@ -1,6 +1,6 @@
 import React from 'react';
-import SHOPDATA from '../shoppage/shop.data.js';
-import CollectionPreview from '../../collection-preview/collection-preview.component';
+import SHOPDATA from './shop.data';
+import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
 class ShopPage extends React.Component {
     constructor() {
