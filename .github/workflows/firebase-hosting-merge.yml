@@ -2,7 +2,7 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-'on':
+"on":
   push:
     branches:
       - master
@@ -12,12 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: >-
+          node server.js
           cd client && npm install && npm install --only=dev --no-shrinkwrap &&
           npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROWN_CLOTHING_CLONE }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROWN_CLOTHING_CLONE }}"
           channelId: live
           projectId: crown-clothing-clone
         env:
