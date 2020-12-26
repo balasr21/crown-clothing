@@ -14,7 +14,8 @@ jobs:
       - run: >-
           npm install
           node server.js
-          cd client && npm install && npm install --only=dev --no-shrinkwrap &&
+          cd client && npm install && npm rebuild node-sass &&
+          npm install --only=dev --no-shrinkwrap &&
           npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
