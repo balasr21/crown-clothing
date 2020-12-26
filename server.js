@@ -31,6 +31,7 @@ app.listen(port, (error) => {
 });
 
 app.post("/payment", function (req, res) {
+  console.log("Received payment request to server ", req);
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,
