@@ -11,7 +11,8 @@ const StripeCheckButton = ({ price }) => {
     console.log(" Sending payment request ", token, priceInCentsForStripe);
 
     axios({
-      url: "payment",
+      url:
+        "https://us-central1-crown-clothing-clone.cloudfunctions.net/payment",
       method: "post",
       data: {
         amount: priceInCentsForStripe,
